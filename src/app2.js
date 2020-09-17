@@ -45,7 +45,7 @@ export default {
         const {stage, loader} = app;
 
 
-        const text = new PIXI.Text('This is APP 2', {fontSize : 80, fill : "#ffffff", fontWeight : "bolder" });
+        const text = new PIXI.Text('This is APP 2 new ', {fontSize : 80, fill : "#ffffff", fontWeight : "bolder" });
         text.anchor.set(0.5);
 
         text.x = width / 2;
