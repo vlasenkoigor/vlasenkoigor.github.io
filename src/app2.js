@@ -41,6 +41,10 @@ export default {
             antialias : true
         })
 
+        app.ticker.add((e)=>{
+            console.log('tick', e)
+        })
+
         app.stage.position.x = -width;
 
 
