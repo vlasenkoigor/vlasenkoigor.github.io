@@ -16,7 +16,7 @@ const show = ()=>{
         app.stage.position.x = 0;
         console.log('show completed')
     };
-    gsap.to(app.stage.position, 1, { x : 0, onComplete, onUpdate : ()=>{console.log('show update')} });
+    gsap.to(app.stage.position, 1, { x : 0, onComplete, onUpdate : ()=>{console.log('show update', app.stage.position)} });
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
@@ -28,7 +28,7 @@ const hide = ()=>{
         console.log('hide completed')
     };
 
-    gsap.to(app.stage.position, 1, { x : -width / 2, onComplete, onUpdate : ()=>{console.log('hide update')} });
+    gsap.to(app.stage.position, 1, { x : -width / 2, onComplete, onUpdate : ()=>{console.log('hide update', app.stage.position)} });
 }
 export default {
     start : ()=>{
@@ -41,9 +41,9 @@ export default {
             antialias : true
         })
 
-        app.ticker.add((e)=>{
-            console.log('tick', e)
-        })
+        // app.ticker.add((e)=>{
+        //     console.log('tick', e)
+        // })
 
         app.stage.position.x = -width;
 
