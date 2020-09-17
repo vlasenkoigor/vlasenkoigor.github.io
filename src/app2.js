@@ -28,7 +28,7 @@ const hide = ()=>{
         console.log('hide completed')
     };
 
-    gsap.to(app.stage.position, 1, { x : -width, onComplete, onUpdate : ()=>{console.log('hide update')} });
+    gsap.to(app.stage.position, 1, { x : -width / 2, onComplete, onUpdate : ()=>{console.log('hide update')} });
 }
 export default {
     start : ()=>{
