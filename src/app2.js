@@ -14,8 +14,9 @@ const show = ()=>{
     document.body.appendChild(app.view);
     const onComplete = () => {
         app.stage.position.x = 0;
+        console.log('show completed')
     };
-    gsap.to(app.stage.position, 1, { x : 0, onComplete });
+    gsap.to(app.stage.position, 1, { x : 0, onComplete, onUpdate : ()=>{console.log('show update')} });
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
@@ -24,9 +25,10 @@ const hide = ()=>{
 
     const onComplete = () => {
         document.body.removeChild(app.view);
+        console.log('hide completed')
     };
 
-    gsap.to(app.stage.position, 1, { x : -width, onComplete });
+    gsap.to(app.stage.position, 1, { x : -width, onComplete, onUpdate : ()=>{console.log('hide update')} });
 }
 export default {
     start : ()=>{
@@ -72,6 +74,8 @@ export default {
         button.buttonMode = true;
         button.on('click', hide);
         button.on('tap', hide);
+
+        // document.body.appendChild(app.view);
     },
 
     show,
