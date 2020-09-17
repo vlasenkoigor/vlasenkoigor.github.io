@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js'
 const width = 1280 , height = 720;
-
+import gsap from 'gsap'
 
 
 // loader.add('layout','/assets/layout.json');
@@ -12,12 +12,20 @@ let app
 
 const show = ()=>{
     document.body.appendChild(app.view);
+    const onComplete = () => {
+    };
+    gsap.to(app.stage.position, 1, { x : 0, onComplete });
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
 }
 const hide = ()=>{
-    document.body.removeChild(app.view);
+
+    const onComplete = () => {
+        document.body.removeChild(app.view);
+    };
+
+    gsap.to(app.stage.position, 1, { x : -width, onComplete });
 }
 export default {
     start : ()=>{
@@ -30,6 +38,7 @@ export default {
             antialias : true
         })
 
+        app.stage.position.x = -width;
 
 
         const {stage, loader} = app;
