@@ -13,10 +13,11 @@ let app
 const show = ()=>{
     document.body.appendChild(app.view);
     const onComplete = () => {
-        app.stage.position.x = 0;
+        // app.stage.position.x = 0;
         console.log('show completed')
     };
-    gsap.to(app.stage.position, 1, { x : 0, onComplete, onUpdate : ()=>{console.log('show update', app.stage.position)} });
+    onComplete();
+    // gsap.to(app.stage.position, 1, { x : 0, onComplete, onUpdate : ()=>{console.log('show update', app.stage.position)} });
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
@@ -27,8 +28,9 @@ const hide = ()=>{
         document.body.removeChild(app.view);
         console.log('hide completed')
     };
+    onComplete();
 
-    gsap.to(app.stage.position, 1, { x : -width / 2, onComplete, onUpdate : ()=>{console.log('hide update', app.stage.position)} });
+    // gsap.to(app.stage.position, 1, { x : -width / 2, onComplete, onUpdate : ()=>{console.log('hide update', app.stage.position)} });
 }
 export default {
     start : ()=>{
@@ -54,7 +56,7 @@ export default {
             toy.y = toyY + Math.sin(+Date.now() / 100) * 100;
         })
 
-        app.stage.position.x = -width;
+        // app.stage.position.x = -width;
 
 
         const {stage, loader} = app;
@@ -88,7 +90,6 @@ export default {
         button.on('click', hide);
         button.on('tap', hide);
 
-        // document.body.appendChild(app.view);
     },
 
     show,
