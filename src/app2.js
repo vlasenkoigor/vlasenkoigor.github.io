@@ -41,9 +41,18 @@ export default {
             antialias : true
         })
 
-        // app.ticker.add((e)=>{
-        //     console.log('tick', e)
-        // })
+        const toy = new PIXI.Graphics();
+        toy.beginFill(0xA50D00);
+        toy.drawCircle(0,0,100,100);
+        toy.endFill();
+        toy.x = width * 0.9;
+        toy.y = height * 0.7;
+        const toyY = height * 0.7;
+        app.stage.addChild(toy);
+
+        app.ticker.add((e)=>{
+            toy.y = toyY + Math.sin(+Date.now() / 100) * 100;
+        })
 
         app.stage.position.x = -width;
 
