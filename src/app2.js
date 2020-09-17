@@ -12,6 +12,7 @@ let app
 
 const show = ()=>{
     document.body.appendChild(app.view);
+    app.renderer.clear();
     app.renderer.reset();
     const onComplete = () => {
         // app.stage.position.x = 0;
@@ -22,6 +23,7 @@ const show = ()=>{
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
+    // app.view.style.display = 'block';
 }
 const hide = ()=>{
 
@@ -55,6 +57,10 @@ export default {
 
         app.ticker.add((e)=>{
             toy.y = toyY + Math.sin(+Date.now() / 100) * 100;
+        })
+
+        app.renderer.on('postrender', ()=>{
+            console.log('postrender', app.renderer.context )
         })
 
         // app.stage.position.x = -width;
