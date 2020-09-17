@@ -12,6 +12,7 @@ let app
 
 const show = ()=>{
     document.body.appendChild(app.view);
+    app.renderer.reset();
     const onComplete = () => {
         // app.stage.position.x = 0;
         console.log('show completed')
