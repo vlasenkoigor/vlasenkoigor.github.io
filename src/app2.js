@@ -13,6 +13,7 @@ let app
 const show = ()=>{
     document.body.appendChild(app.view);
     const onComplete = () => {
+        app.stage.position.x = 0;
     };
     gsap.to(app.stage.position, 1, { x : 0, onComplete });
     app.view.style.position = 'absolute';
