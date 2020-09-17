@@ -35,7 +35,7 @@ export default {
             width, height,
             backgroundColor: 0x000000,
             resolution: window.devicePixelRatio || 1,
-            // transparent : true,
+            transparent : true,
             antialias : true
         })
 
