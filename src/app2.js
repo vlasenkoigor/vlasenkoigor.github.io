@@ -11,7 +11,8 @@ import gsap from 'gsap'
 let app
 
 const show = ()=>{
-    document.body.appendChild(app.view);
+    // document.body.appendChild(app.view);
+    app.view.style.display = 'block';
     app.renderer.clear();
     app.renderer.reset();
     const onComplete = () => {
@@ -23,12 +24,13 @@ const show = ()=>{
     app.view.style.position = 'absolute';
     app.view.style.top = '0';
     app.view.style.left = '0';
-    // app.view.style.display = 'block';
+
 }
 const hide = ()=>{
 
     const onComplete = () => {
-        document.body.removeChild(app.view);
+        // document.body.removeChild(app.view);
+        app.view.style.display = 'none';
         console.log('hide completed')
     };
     onComplete();
@@ -57,10 +59,6 @@ export default {
 
         app.ticker.add((e)=>{
             toy.y = toyY + Math.sin(+Date.now() / 100) * 100;
-        })
-
-        app.renderer.on('postrender', ()=>{
-            console.log('postrender', app.renderer.context )
         })
 
         // app.stage.position.x = -width;
@@ -97,6 +95,8 @@ export default {
         button.on('click', hide);
         button.on('tap', hide);
 
+        app.view.style.display = 'none';
+        document.body.appendChild(app.view);
     },
 
     show,
