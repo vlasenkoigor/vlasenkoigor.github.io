@@ -41,7 +41,6 @@ export default {
         logText = text;
 
         stage.addChild(text);
-
     }
 }
 
