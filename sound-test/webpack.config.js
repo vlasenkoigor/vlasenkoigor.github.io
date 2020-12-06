@@ -21,10 +21,11 @@ module.exports = (env, argv)=>{
         },
         devtool: 'cheap-source-map',
         devServer: {
+            host: '0.0.0.0',
             liveReload: false,
             hot: true,
             contentBase: path.join(__dirname, 'public'),
-            publicPath: '/js/'
+            // publicPath: '/js/'
         }
     }
 

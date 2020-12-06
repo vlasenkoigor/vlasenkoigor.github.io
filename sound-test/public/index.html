@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="soundjs-0.5.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>create js app</title>
+
+    <style>
+        #controls{
+            margin-top: 30px;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-content: flex-start;*/
+        }
+
+        #controls div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            align-self: center;
+            height: 100px;
+            font: 35px Arial;
+            color: white;
+            background-color: red;
+            cursor: pointer;
+        }
+
+        #log{
+            background-color: darkgrey;
+        }
+
+
+        #log span {
+            color: white;
+            font-family: Calibri;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div id="play">Play</div>
+        <div id="stop">Stop</div>
+        <div id="mute">Mute</div>
+    </div>
+
+    <div id="log">
+    </div>
+
+
+
+<script src="./main.js"></script>
+<!--<script src="./createjs-polyfill.js"></script>-->
+</body>
+</html>

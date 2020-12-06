@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <script type="text/javascript" src="dat.gui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .controls{
+            position: fixed;
+            font-family: Arial,serif;
+            display: flex;
+            flex-direction: column;
+            background-color: darkgrey;
+            border-radius: 3px;
+            margin: 10px 10px;
+            width: 300px;
+            justify-content: flex-start;
+            z-index: 999999;
+        }
+
+       .controls-item{
+           /*border: 1px solid red;*/
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding-bottom: 10px;
+           padding-left: 10px;
+           padding-right: 10px;
+        }
+
+        .controls-item__inputs{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .controls-item__inputs input[type=text]{
+            width: 42%;
+            border: 1px solid #9ea2a2;
+            border-radius: 3px;
+            background: #ffffff;
+            padding: 2px;
+            outline: none;
+        }
+
+        .controls-item__inputs input[type=range]{
+            width: 100px;
+        }
+
+        .controls-item__inputs__checkbox{
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .controls-item__inputs__checkbox > input{
+            margin-right: 3px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="root">
+
+<!-- texts and values controls -->
+    <div class="controls">
+        <div class="controls-item" id="balance-item">
+            <div class="controls-item__inputs">
+                <input type=text value="Balance" class="controls-item__inputs__text"/>
+                <span>:</span>
+                <input type=text value="100" class="controls-item__inputs__value"/>
+            </div>
+
+            <div class="controls-item__inputs">
+                <input type="range"  min="0" max="1000000" class="controls-item__inputs__range">
+            </div>
+        </div>
+
+        <div class="controls-item" id="win-item">
+            <div class="controls-item__inputs">
+                <input type=text value="TOTAL WINS" class="controls-item__inputs__text"/>
+                <span>:</span>
+                <input type=text value="100" class="controls-item__inputs__value"/>
+            </div>
+
+            <div class="controls-item__inputs" >
+                <div class="controls-item__inputs__checkbox">
+                    <input type="checkbox" checked class="controls-item__inputs__check">
+                    <span>win up</span>
+                </div>
+
+                <input type="range" min="0" max="1000000" class="controls-item__inputs__range">
+            </div>
+        </div>
+
+
+        <div class="controls-item" id="total-cost-item">
+            <div class="controls-item__inputs">
+                <input type=text value="TOTAL COST" class="controls-item__inputs__text"/>
+                <span>:</span>
+                <input type=text value="100" class="controls-item__inputs__value"/>
+            </div>
+
+            <div class="controls-item__inputs">
+
+                <input type="range" min="0" max="1000000" class="controls-item__inputs__range">
+
+            </div>
+        </div>
+
+        <div class="controls-item" id="height-item">
+            <div class="controls-item__inputs">
+                <span>Height (%) :</span>
+                <input type=text value="100" class="controls-item__inputs__value"/>
+            </div>
+
+            <div class="controls-item__inputs">
+                <input type="range" min="0" max="100" class="controls-item__inputs__range">
+            </div>
+        </div>
+
+
+        <div class="controls-item" id="height-checkboxes">
+
+            <div class="controls-item__inputs">
+                <div class="controls-item__inputs__checkbox">
+                    <input type="checkbox" checked class="controls-item__inputs__check" id="show_chkbx">
+                    <span>show </span>
+                </div>
+
+                <div class="controls-item__inputs__checkbox">
+                    <input type="checkbox" class="controls-item__inputs__check" id="debug_chkbx">
+                    <span>debug </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="../../lib/ngt-balance-info-bar.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
