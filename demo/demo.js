@@ -13,7 +13,8 @@ const texts = {
 }
 
 const config  = {
-    height : 12
+    height : 12,
+    hasWinUpToPanel : true
 }
 
 let infoBar = new window['ngt-balance-info-bar'].default(config, texts);
